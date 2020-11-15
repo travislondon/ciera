@@ -1169,7 +1169,9 @@ if empty sel_cls
     select one sel_cls related by select_expr->SelectFromInstances[R789]->InstancePopulationSelector[R799]->Class[R449];
   end if;
 end if;
-sel.cast = sel_cls.name;',
+sel.cast = sel_cls.name;
+select one file related by sel_cls->File[R401];
+::addFileToImports( file: ::getFileForStatement( smt: smt ), file_to_import: file, type: ImportType::IMPL );',
 	"ba5eda7a-def5-0000-0000-000000000000",
 	1,
 	'',
